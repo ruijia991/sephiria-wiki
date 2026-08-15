@@ -1,0 +1,296 @@
+{
+  "site": {
+    "name": "Sephiria Wiki",
+    "shortName": "SPW",
+    "description": "Complete Sephiria wiki with weapon tier lists, builds, secret rooms, constellation locations, co-op guides, and achievements. Updated for 1.0.",
+    "tagline": "Your tower guide for everything Sephiria",
+    "legalNotice": "Sephiria Wiki is a fan-made community site. Not affiliated with or endorsed by TEAM HORAY."
+  },
+  "nav": {
+    "home": "Home",
+    "weapons": "Weapons",
+    "builds": "Builds",
+    "guides": "Guides",
+    "characters": "Characters",
+    "secrets": "Secrets",
+    "co-op": "Co-op",
+    "toggleTheme": "Toggle theme",
+    "menu": "Menu",
+    "close": "Close",
+    "search": "Search"
+  },
+  "search": {
+    "placeholder": "Search the wiki...",
+    "noResults": "No matches found",
+    "open": "Open search"
+  },
+  "shared": {
+    "readMore": "Read more",
+    "lastUpdated": "Last updated",
+    "publishedOn": "Published",
+    "noArticles": "No articles yet. Check back soon!",
+    "relatedArticles": "Related Articles",
+    "onThisPage": "On this page",
+    "backToCategory": "Back to",
+    "browseAll": "Browse all",
+    "viewAll": "View all",
+    "commentsHeading": "Comments"
+  },
+  "overview": {
+    "weapons": {
+      "overviewTitle": "All Sephiria Weapons",
+      "overviewDescription": "Every weapon in Sephiria ranked and explained: tier lists, upgrade paths, evolutions, and unlock conditions for all six base weapons."
+    },
+    "builds": {
+      "overviewTitle": "All Sephiria Builds",
+      "overviewDescription": "Complete Sephiria build guides with talisman and artifact synergies, inventory setups, and shareable preset codes."
+    },
+    "guides": {
+      "overviewTitle": "All Sephiria Guides",
+      "overviewDescription": "In-depth Sephiria tutorials covering progression, hard mode, talent points, money farming, and 100% completion."
+    },
+    "characters": {
+      "overviewTitle": "All Sephiria Characters",
+      "overviewDescription": "Every costume and character in Sephiria: unlock conditions, abilities, and where to find each NPC in the tower."
+    },
+    "secrets": {
+      "overviewTitle": "All Sephiria Secrets",
+      "overviewDescription": "Secret room locations, constellation rooms, the Elru quest, hidden bosses, and the full Sephiria achievements list."
+    },
+    "co-op": {
+      "overviewTitle": "Sephiria Co-op Guides",
+      "overviewDescription": "How to play Sephiria co-op with up to 4 players: setup, item trading, revives, and fixes for connection problems."
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Sephiria Wiki - Weapons Tier List, Builds, Secrets & Co-op Guides",
+      "description": "The most complete Sephiria wiki. Weapon tier lists, best builds, secret room and constellation locations, co-op fixes, and achievements. Updated for version 1.0."
+    },
+    "hero": {
+      "eyebrow": "Fan-Made Community Wiki",
+      "title": "Sephiria Wiki",
+      "description": "Your complete guide to Sephiria. Weapon tier lists, powerful builds, secret room locations, constellation maps, co-op troubleshooting, and everything you need to save Bunnyville.",
+      "primaryCta": "Play Sephiria on Steam",
+      "secondaryCta": "Browse Guides",
+      "videoId": ""
+    },
+    "updates": {
+      "title": "Recent Updates",
+      "browse": "Browse all guides"
+    },
+    "start": {
+      "eyebrow": "Start Here",
+      "title": "Your Sephiria Journey",
+      "cards": [
+        {
+          "number": "1",
+          "title": "Beginner Guide",
+          "description": "New to Sephiria? Start here with core mechanics, the puzzle-like inventory system, and your first descent.",
+          "icon": "lucide:book-open",
+          "href": "/guides/beginner-guide"
+        },
+        {
+          "number": "2",
+          "title": "Weapons Tier List",
+          "description": "All six weapons ranked for the 1.0 meta, with upgrade paths and evolutions.",
+          "icon": "lucide:list-ordered",
+          "href": "/weapons/weapon-tier-list"
+        },
+        {
+          "number": "3",
+          "title": "Secret Rooms",
+          "description": "How to find hidden rooms, crack walls, and locate every constellation in the tower.",
+          "icon": "lucide:map-pin",
+          "href": "/secrets/secret-rooms"
+        },
+        {
+          "number": "4",
+          "title": "Co-op Guide",
+          "description": "Play with up to 4 friends: setup, trading rules, revives, and connection fixes.",
+          "icon": "lucide:users-round",
+          "href": "/co-op/co-op-guide"
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Trending Now",
+      "title": "Most Read This Week",
+      "quickLinks": [
+        {
+          "label": "Weapons Tier List (1.0)",
+          "href": "/weapons/weapon-tier-list"
+        },
+        {
+          "label": "Best Builds & Preset Codes",
+          "href": "/builds"
+        },
+        {
+          "label": "Constellations Guide",
+          "href": "/secrets/constellations-guide"
+        },
+        {
+          "label": "Co-op Not Working? Fixes",
+          "href": "/co-op/co-op-not-working"
+        }
+      ]
+    },
+    "explore": {
+      "title": "Explore the Wiki",
+      "description": "Everything you need, organized by category. Pick a topic and dive in.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Sephiria Weapons",
+          "description": "All six weapons ranked for the current 1.0 meta, with upgrade paths and evolutions.",
+          "href": "/weapons",
+          "displayType": "tier-grid",
+          "highlights": [
+            {
+              "label": "S",
+              "detail": "Greatsword, Staff"
+            },
+            {
+              "label": "A",
+              "detail": "Katana, Crossbow"
+            },
+            {
+              "label": "B",
+              "detail": "Sword and Shield, Dagger"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Sephiria Builds",
+          "description": "Complete setups with talisman and artifact synergies, plus shareable preset codes.",
+          "href": "/builds",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Frozen Smelt",
+              "detail": "Low-input freeze control, beginner friendly"
+            },
+            {
+              "label": "Guardian Greatsword",
+              "detail": "Forgiving playstyle, huge damage windows"
+            },
+            {
+              "label": "Sky Dragon",
+              "detail": "Endgame hard mode powerhouse, Tier 35+"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Sephiria Secrets",
+          "description": "Hidden rooms, constellation locations, the Elru quest, and every achievement.",
+          "href": "/secrets",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Secret Rooms",
+              "detail": "How to spot and open cracked walls"
+            },
+            {
+              "label": "Constellations",
+              "detail": "All zodiac rooms and their rewards"
+            },
+            {
+              "label": "Elru Quest",
+              "detail": "All three hiding spots solved"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Sephiria Progression",
+          "description": "From first descent to hard mode Tier 35: leveling routes and talent point priorities.",
+          "href": "/guides",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Learn the inventory grid and synergies"
+            },
+            {
+              "label": "2",
+              "detail": "Unlock and upgrade your main weapon"
+            },
+            {
+              "label": "3",
+              "detail": "Clear the tower and unlock hard mode"
+            },
+            {
+              "label": "4",
+              "detail": "Push Tier 30+ with a tuned build"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Quick answers to the most common questions about Sephiria.",
+      "items": [
+        {
+          "question": "What is Sephiria?",
+          "answer": "Sephiria is a top-down action roguelite by TEAM HORAY, the studio behind Dungreed. You play a brave bunny descending a tower to save the town of Bunnyville. It left Steam Early Access with the full 1.0 release on July 31, 2026."
+        },
+        {
+          "question": "What is the best weapon in Sephiria?",
+          "answer": "For the 1.0 meta, Greatsword and Staff are widely considered the top picks: Greatsword for heavy damage and wide coverage, Staff for flexible ranged control. Katana and Crossbow are strong alternatives once you are comfortable with the game."
+        },
+        {
+          "question": "Does Sephiria have co-op?",
+          "answer": "Yes. Sephiria supports online co-op for up to 4 players through Steam, with item trading and teammate revives. If invites or connections fail, our co-op troubleshooting guide covers the most common fixes."
+        },
+        {
+          "question": "How do I find secret rooms in Sephiria?",
+          "answer": "Secret rooms hide behind cracked or discolored walls. Watch for subtle tile differences on each floor, then attack the wall to break it open. Constellation rooms work the same way and count toward 100% completion."
+        },
+        {
+          "question": "Is Sephiria worth buying?",
+          "answer": "Sephiria costs $14.99 on Steam and holds a Very Positive rating from over 5,500 reviews. Reviewers frequently compare it to Enter the Gungeon and The Binding of Isaac, and it runs great on Steam Deck."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Ready to Descend the Tower?",
+      "description": "Bookmark this wiki and check back after every patch for updated tier lists, builds, and secret locations.",
+      "primary": "Play Sephiria on Steam",
+      "secondary": "Join r/Sephiria"
+    },
+    "_archived": {
+      "_comment": "Sections removed from the homepage during the v0.2 layout refactor. Kept here so data is not lost; not rendered by HomePage.astro.",
+      "aboutGame": {
+        "title": "What is Sephiria?",
+        "paragraphs": [
+          "Sephiria is a top-down action roguelite developed by TEAM HORAY, the Korean indie studio behind Dungreed. Players guide a brave bunny down a doomed tower, mastering six weapon classes, collecting talismans and artifacts, and arranging a puzzle-like inventory to save the town of Bunnyville.",
+          "The game entered Steam Early Access on April 3, 2025 and fully launched as version 1.0 on July 31, 2026, earning a Very Positive rating across more than 5,500 reviews."
+        ],
+        "stats": [
+          { "label": "Developer", "value": "TEAM HORAY" },
+          { "label": "Platform", "value": "Steam" },
+          { "label": "Genre", "value": "Action Roguelite" },
+          { "label": "Reviews", "value": "5,500+ Very Positive" },
+          { "label": "1.0 Release", "value": "July 31, 2026" }
+        ],
+        "cta": "Explore All Guides"
+      }
+    }
+  },
+  "footer": {
+    "playGame": "Play Sephiria on Steam",
+    "officialDiscord": "Official Discord",
+    "officialYoutube": "Official YouTube",
+    "officialTwitter": "Official Twitter",
+    "officialReddit": "Official Reddit",
+    "about": "About",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "Copyright",
+    "copyrightText": "© 2026 Sephiria Wiki. Fan-made, not affiliated with TEAM HORAY."
+  }
+}

@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Theme color variables — the ONLY place to change colors when skinning.
+ *
+ * 👉 SKINNING: Change ONLY these 4 lines (2 in :root, 2 in .dark).
+ * All other CSS variables and all components reference these via var().
+ * Do NOT hardcode hex/rgba/Tailwind color classes elsewhere.
+ */
+@layer base {
+  :root {
+    /* Light mode theme color — Sephiria warm amber (bunny / wheat fields). */
+    --nav-theme: 30 70% 51%;
+    --nav-theme-light: 30 70% 61%;
+    /* Split H/S for derived shades (e.g. darker button backgrounds). */
+    --nav-theme-h: 30;
+    --nav-theme-s: 70%;
+  }
+
+  .dark {
+    /* Dark mode theme color — slightly deeper. */
+    --nav-theme: 30 65% 47%;
+    --nav-theme-light: 30 65% 57%;
+    --nav-theme-h: 30;
+    --nav-theme-s: 65%;
+  }
+}
+
+/* Other design tokens — these reference --nav-theme, so they auto-follow skinning. */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 18%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  /* Prevent FOUC: apply dark class before paint. */
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+}
+
+/* Utility classes referencing the theme token. */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    /* Button background needs white text contrast ≥ 4.5:1 (WCAG AA).
+       --nav-theme (52% lightness) gives only 3.1:1, so we darken it
+       to ~40% for button backgrounds. This does NOT change --nav-theme
+       itself — it's a derived value for buttons only. */
+    background-color: hsl(var(--nav-theme-h) var(--nav-theme-s) 40%);
+  }
+  .btn-primary:hover {
+    background-color: hsl(var(--nav-theme-h) var(--nav-theme-s) 35%);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md border border-border bg-background px-4 py-2 text-sm font-medium transition hover:bg-muted;
+  }
+
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground transition hover:border-nav/50 hover:shadow-md;
+  }
+
+  /* Unified section vertical rhythm — use on all homepage sections. */
+  .section {
+    @apply mx-auto max-w-7xl px-4 py-12 md:py-16;
+  }
+}
+
+/* Theme initialization script — runs before paint to avoid FOUC. */
+/* The actual <script> is injected in BaseLayout.astro. */

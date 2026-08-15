@@ -1,0 +1,102 @@
+{
+  "game": "Sephiria",
+  "generated": "2026-08-15",
+  "notes": "Sephiria是Steam游戏，无codes兑换码系统，故无codes分类；差异化主打secrets与co-op",
+  "categories": [
+    {
+      "slug": "weapons",
+      "name": "Weapons",
+      "keywords": [
+        "sephiria weapons tier list",
+        "sephiria best weapon",
+        "sephiria weapon guide",
+        "sephiria greatsword guide",
+        "sephiria katana build",
+        "sephiria dagger guide",
+        "sephiria crossbow guide",
+        "sephiria staff vs greatsword",
+        "sephiria sword and shield guide",
+        "sephiria weapon upgrades",
+        "sephiria weapon evolution list",
+        "sephiria all weapons unlock"
+      ]
+    },
+    {
+      "slug": "builds",
+      "name": "Builds",
+      "keywords": [
+        "sephiria best build",
+        "sephiria build guide",
+        "sephiria builds 1.0",
+        "sephiria build preset codes",
+        "sephiria freeze build",
+        "sephiria beginner build",
+        "sephiria hard mode build",
+        "sephiria talisman build",
+        "sephiria artifact synergy",
+        "sephiria inventory setup guide"
+      ]
+    },
+    {
+      "slug": "guides",
+      "name": "Guides",
+      "keywords": [
+        "sephiria beginner guide",
+        "sephiria tips and tricks",
+        "sephiria progression guide",
+        "sephiria how to get stronger",
+        "sephiria hard mode guide",
+        "sephiria talent points guide",
+        "sephiria money farming",
+        "sephiria difficulty tiers explained",
+        "sephiria 100 percent completion",
+        "sephiria update patch notes"
+      ]
+    },
+    {
+      "slug": "characters",
+      "name": "Characters",
+      "keywords": [
+        "sephiria characters list",
+        "sephiria costumes unlock",
+        "sephiria all outfits",
+        "sephiria how to unlock bat character",
+        "sephiria npc list",
+        "sephiria character abilities",
+        "sephiria best costume",
+        "sephiria skin effects"
+      ]
+    },
+    {
+      "slug": "secrets",
+      "name": "Secrets",
+      "keywords": [
+        "sephiria secret rooms",
+        "sephiria secret room locations",
+        "sephiria constellations guide",
+        "sephiria zodiac rooms",
+        "sephiria elru quest guide",
+        "sephiria hidden rooms walls",
+        "sephiria achievements guide",
+        "sephiria all achievements list",
+        "sephiria secret boss",
+        "sephiria easter eggs"
+      ]
+    },
+    {
+      "slug": "co-op",
+      "name": "Co-op",
+      "keywords": [
+        "sephiria co op guide",
+        "sephiria multiplayer how to",
+        "sephiria 4 player co op",
+        "sephiria co op not working",
+        "sephiria online connection fix",
+        "sephiria item trading rules",
+        "sephiria revive teammates",
+        "sephiria crossplay steam deck"
+      ]
+    }
+  ],
+  "total_keywords": 58
+}

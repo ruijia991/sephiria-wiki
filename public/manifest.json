@@ -1,0 +1,21 @@
+{
+  "name": "Sephiria Wiki",
+  "short_name": "SPW",
+  "description": "Complete Sephiria wiki with weapon tier lists, builds, secrets, and co-op guides.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D9822B",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
