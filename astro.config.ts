@@ -8,7 +8,7 @@ import { locales, defaultLocale } from './src/i18n/routing';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://sephiriawiki-5ro.pages.dev',
+  site: process.env.SITE_URL || 'https://sephiria.cfd',
   output: 'static',
   trailingSlash: 'never',
   image: {

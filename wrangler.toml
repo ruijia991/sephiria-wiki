@@ -1,23 +1,8 @@
-# ⚠️⚠️⚠️ FORKERS READ THIS FIRST ⚠️⚠️⚠️
+# Cloudflare Pages configuration for Sephiria Wiki (https://sephiria.cfd).
 #
-# This wrangler.toml contains the DEMO SITE config (anvilwiki.pages.dev).
-# The [vars] below point at PNGTRID/AnvilWiki's own GitHub Discussions.
-#
-# When you fork: EITHER
-#   (A) Edit the [vars] values below to your own (SITE_URL + GISCUS_*), OR
-#   (B) Delete this file (`git rm wrangler.toml && git commit`) and configure
-#       env vars in the Cloudflare dashboard instead.
-#
-# Why this matters: when wrangler.toml exists, it is the SOLE source of truth
-# for the Pages project's env — the Cloudflare dashboard's "Environment
-# variables" UI is completely IGNORED. If you config env in the dashboard but
-# leave this file here with these demo values, your build will use THESE
-# values, not yours.
-#
-# See docs/deployment.md for the full guide.
-# ⚠️⚠️⚠️ END FORKER WARNING ⚠️⚠️⚠️
-
-# Cloudflare Pages configuration for local preview with Wrangler.
+# ⚠️ When this file exists, it is the SOLE source of truth for the Pages
+# project's env — the Cloudflare dashboard's "Environment variables" UI is
+# completely IGNORED. Change values here, not in the dashboard.
 #
 # Usage:
 #   pnpm build
@@ -29,16 +14,18 @@
 #
 # Reference: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
 
-name = "anvilwiki"
+name = "sephiriawiki-5ro"
 compatibility_date = "2026-08-11"
 pages_build_output_dir = "dist"
 
 [vars]
 # Site (must include https:// protocol — Astro validates this as a URL)
-SITE_URL = "https://anvilwiki.pages.dev"
-# Giscus comments (DEMO — anvilwiki.pages.dev points at PNGTRID/AnvilWiki Discussions)
-PUBLIC_GISCUS_REPO = "PNGTRID/AnvilWiki"
-PUBLIC_GISCUS_REPO_ID = "R_kgDOT1aRPQ"
-PUBLIC_GISCUS_CATEGORY = "Announcements"
-PUBLIC_GISCUS_CATEGORY_ID = "DIC_kwDOT1aRPc4DDODo"
+SITE_URL = "https://sephiria.cfd"
+# Giscus comments (empty = disabled, Comments.astro returns null — preserves
+# Lighthouse 4×100). To enable: fill in your own repo's values from
+# https://giscus.app. See docs/comments.md.
+PUBLIC_GISCUS_REPO = ""
+PUBLIC_GISCUS_REPO_ID = ""
+PUBLIC_GISCUS_CATEGORY = ""
+PUBLIC_GISCUS_CATEGORY_ID = ""
 PUBLIC_GISCUS_MAPPING = "pathname"

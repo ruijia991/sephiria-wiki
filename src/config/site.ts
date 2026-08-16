@@ -52,7 +52,7 @@ export const site: SiteConfig = {
   shortName: 'SPW',
   description:
     'Complete Sephiria wiki with weapon tier lists, builds, secret rooms, constellation locations, co-op guides, and achievements. Updated for 1.0.',
-  domain: 'sephiriawiki-5ro.pages.dev',
+  domain: 'sephiria.cfd',
   tagline: 'Your tower guide for everything Sephiria',
   legalNotice:
     'Sephiria Wiki is a fan-made community site. Not affiliated with or endorsed by TEAM HORAY.',
