@@ -70,7 +70,10 @@ export async function getEntryWithFallback(
 
   // 2. Fall back to English (default locale).
   if (locale !== defaultLocale) {
-    const fallback = await getEntry('wiki', `${defaultLocale}/${category}/${slug}`);
+    // Typed as plain string to match the requested-locale lookup above —
+    // Astro's generated entry-map types don't accept template-literal types here.
+    const fallbackId: string = `${defaultLocale}/${category}/${slug}`;
+    const fallback = await getEntry('wiki', fallbackId);
     if (fallback) {
       return { entry: fallback, servedLocale: defaultLocale, isFallback: true };
     }

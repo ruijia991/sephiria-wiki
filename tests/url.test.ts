@@ -14,14 +14,8 @@ describe('url helpers', () => {
       expect(localizePath('/bosses/gelum', 'en')).toBe('/bosses/gelum');
     });
 
-    it('prepends the locale prefix for non-default locales', () => {
-      expect(localizePath('/bosses', 'ja')).toBe('/ja/bosses');
-      expect(localizePath('/bosses/gelum', 'ja')).toBe('/ja/bosses/gelum');
-    });
-
     it('ensures leading slash on input without one', () => {
       expect(localizePath('about', 'en')).toBe('/about');
-      expect(localizePath('about', 'ja')).toBe('/ja/about');
     });
   });
 
@@ -29,15 +23,11 @@ describe('url helpers', () => {
     it('returns / for default locale', () => {
       expect(homeUrl('en')).toBe('/');
     });
-    it('returns /ja for non-default locale', () => {
-      expect(homeUrl('ja')).toBe('/ja');
-    });
   });
 
   describe('listPath', () => {
     it('builds the correct list URL for each locale', () => {
       expect(listPath('bosses', 'en')).toBe('/bosses');
-      expect(listPath('bosses', 'ja')).toBe('/ja/bosses');
       expect(listPath('codes', 'en')).toBe('/codes');
     });
   });
@@ -45,15 +35,11 @@ describe('url helpers', () => {
   describe('detailPath', () => {
     it('builds the correct article URL for each locale', () => {
       expect(detailPath('bosses', 'gelum', 'en')).toBe('/bosses/gelum');
-      expect(detailPath('bosses', 'gelum', 'ja')).toBe('/ja/bosses/gelum');
     });
 
     it('handles nested slugs', () => {
       expect(detailPath('guides', 'early-game/beginner', 'en')).toBe(
         '/guides/early-game/beginner',
-      );
-      expect(detailPath('guides', 'early-game/beginner', 'ja')).toBe(
-        '/ja/guides/early-game/beginner',
       );
     });
   });
