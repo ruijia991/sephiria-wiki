@@ -29,3 +29,13 @@ PUBLIC_GISCUS_REPO_ID = ""
 PUBLIC_GISCUS_CATEGORY = ""
 PUBLIC_GISCUS_CATEGORY_ID = ""
 PUBLIC_GISCUS_MAPPING = "pathname"
+# Adsterra ad slots (empty = disabled, ad components render nothing and
+# inject-ad-keys.ts leaves dist/ads/*.html untouched). Fill each with the key
+# from the matching ad unit at https://publishers.adsterra.com/. See
+# docs/ads.md — keys map 1:1 to public/ads/*.html slot files.
+PUBLIC_AD_MOBILE_320X50 = "63820e5cd3cc55129e60054bb3389641"
+PUBLIC_AD_SIDEBAR_160X300 = "91d95bf32145701591d6a883d7f15fb9"
+PUBLIC_AD_SIDEBAR_160X600 = "3d3f893bb06a60156d102b0cebb62f62"
+PUBLIC_AD_BANNER_728X90 = "0d4d96090435e51386627768a51662d3"
+PUBLIC_AD_BANNER_300X250 = "86b54708f88a87fb600e478d3e6a5f8e"
+PUBLIC_AD_BANNER_468X60 = "dc3c7aeccd88cf6a0405f9bda864107d"
