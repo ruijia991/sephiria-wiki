@@ -41,4 +41,4 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SITE_URL: https://anvilwiki.pages.dev
+          SITE_URL: https://sephiria.cfd
