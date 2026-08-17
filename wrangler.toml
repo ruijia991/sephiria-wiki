@@ -19,6 +19,8 @@ compatibility_date = "2026-08-11"
 pages_build_output_dir = "dist"
 
 [vars]
+# Node version for the Cloudflare Pages build image (matches .nvmrc / engines).
+NODE_VERSION = "22"
 # Site (must include https:// protocol — Astro validates this as a URL)
 SITE_URL = "https://sephiria.cfd"
 # Giscus comments (empty = disabled, Comments.astro returns null — preserves
