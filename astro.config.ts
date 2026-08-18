@@ -11,6 +11,12 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://sephiria.cfd',
   output: 'static',
   trailingSlash: 'never',
+  build: {
+    // Emit /about.html instead of /about/index.html so the host serves the
+    // slashless URL directly — required for trailingSlash: 'never' to hold
+    // on static hosts (they canonicalize directory builds to '/about/').
+    format: 'file',
+  },
   image: {
     // Emit explicit width/height on responsive <Image> output to prevent CLS.
     responsiveStyles: true,
