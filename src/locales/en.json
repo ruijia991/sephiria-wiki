@@ -14,6 +14,8 @@
     "characters": "Characters",
     "secrets": "Secrets",
     "co-op": "Co-op",
+    "artifacts": "Artifacts",
+    "tablets": "Tablets",
     "toggleTheme": "Toggle theme",
     "menu": "Menu",
     "close": "Close",
@@ -45,6 +47,14 @@
       "overviewTitle": "All Sephiria Builds",
       "overviewDescription": "Complete Sephiria build guides with talisman and artifact synergies, inventory setups, and shareable preset codes."
     },
+    "artifacts": {
+      "overviewTitle": "All Sephiria Artifacts",
+      "overviewDescription": "How Sephiria's 300+ artifacts work: rarity tiers, adjacency synergies in the inventory grid, and placement strategy for every build."
+    },
+    "tablets": {
+      "overviewTitle": "All Sephiria Tablets",
+      "overviewDescription": "Sephiria's tablets explained: adjacency boosts, grid placement strategy, and how tablets compound your artifact setup."
+    },
     "guides": {
       "overviewTitle": "All Sephiria Guides",
       "overviewDescription": "In-depth Sephiria tutorials covering progression, hard mode, talent points, money farming, and 100% completion."
@@ -73,7 +83,13 @@
       "description": "Your complete guide to Sephiria. Weapon tier lists, powerful builds, secret room locations, constellation maps, co-op troubleshooting, and everything you need to save Bunnyville.",
       "primaryCta": "Play Sephiria on Steam",
       "secondaryCta": "Browse Guides",
-      "videoId": ""
+      "videoId": "",
+      "stats": [
+        { "value": "6", "label": "Weapon Branches" },
+        { "value": "300+", "label": "Artifacts" },
+        { "value": "70", "label": "Tablets" },
+        { "value": "4P", "label": "Online Co-op" }
+      ]
     },
     "updates": {
       "title": "Recent Updates",
@@ -235,23 +251,48 @@
       "items": [
         {
           "question": "What is Sephiria?",
-          "answer": "Sephiria is a top-down action roguelite by TEAM HORAY, the studio behind Dungreed. You play a brave bunny descending a tower to save the town of Bunnyville. It left Steam Early Access with the full 1.0 release on July 31, 2026."
+          "answer": "Sephiria is a top-down action roguelite by TEAM HORAY, the studio behind Dungreed. You play a brave bunny descending a tower to save the town of Bunnyville. It left Steam Early Access with the full 1.0 release on July 31, 2026.",
+          "link": { "label": "Read the beginner guide", "href": "/guides/beginner-guide" }
         },
         {
           "question": "What is the best weapon in Sephiria?",
-          "answer": "For the 1.0 meta, Greatsword and Staff are widely considered the top picks: Greatsword for heavy damage and wide coverage, Staff for flexible ranged control. Katana and Crossbow are strong alternatives once you are comfortable with the game."
+          "answer": "For the 1.0 meta, Greatsword and Staff are widely considered the top picks: Greatsword for heavy damage and wide coverage, Staff for flexible ranged control. Katana and Crossbow are strong alternatives once you are comfortable with the game.",
+          "link": { "label": "See the full weapon tier list", "href": "/weapons/weapon-tier-list" }
         },
         {
           "question": "Does Sephiria have co-op?",
-          "answer": "Yes. Sephiria supports online co-op for up to 4 players through Steam, with item trading and teammate revives. If invites or connections fail, our co-op troubleshooting guide covers the most common fixes."
+          "answer": "Yes. Sephiria supports online co-op for up to 4 players through Steam, with item trading and teammate revives. If invites or connections fail, our co-op troubleshooting guide covers the most common fixes.",
+          "link": { "label": "Open the co-op troubleshooting guide", "href": "/co-op/co-op-not-working" }
         },
         {
           "question": "How do I find secret rooms in Sephiria?",
-          "answer": "Secret rooms hide behind cracked or discolored walls. Watch for subtle tile differences on each floor, then attack the wall to break it open. Constellation rooms work the same way and count toward 100% completion."
+          "answer": "Secret rooms hide behind cracked or discolored walls. Watch for subtle tile differences on each floor, then attack the wall to break it open. Constellation rooms work the same way and count toward 100% completion.",
+          "link": { "label": "Full secret rooms guide", "href": "/secrets/secret-rooms" }
         },
         {
           "question": "Is Sephiria worth buying?",
           "answer": "Sephiria costs $14.99 on Steam and holds a Very Positive rating from over 5,500 reviews. Reviewers frequently compare it to Enter the Gungeon and The Binding of Isaac, and it runs great on Steam Deck."
+        }
+      ]
+    },
+    "editorial": {
+      "eyebrow": "Editorial Standards",
+      "title": "How This Wiki Stays Current",
+      "points": [
+        {
+          "icon": "lucide:badge-check",
+          "title": "Official-first sourcing",
+          "text": "Every guide is written against official patch notes and in-game data from the 1.0 release, not secondhand summaries."
+        },
+        {
+          "icon": "lucide:calendar-check",
+          "title": "Dated reviews",
+          "text": "Each guide shows when it was last reviewed, so you always know how current the advice is."
+        },
+        {
+          "icon": "lucide:users",
+          "title": "Community findings, labeled",
+          "text": "Strategies discovered by players are marked as community-tested and updated as the meta settles."
         }
       ]
     },

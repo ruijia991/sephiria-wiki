@@ -8,9 +8,11 @@
  * Sections (top to bottom):
  *   1. Hero          — title, description, CTAs (strong visual anchor)
  *   2. QuickStart    — 4 large icon cards (Codes / Bosses / Guides / Tier)
- *   3. Recent Updates + Trending links (two columns)
- *   4. Explore       — 4 content modules with displayTypes
- *   5. FinalCta      — bottom call-to-action
+ *   3. Recent Updates + Trending links (two columns, cards show review dates)
+ *   4. EditorialStandards — "How This Wiki Stays Current" trust strip
+ *   5. Explore       — 4 content modules with displayTypes
+ *   6. FAQ           — compact accordion with internal links (search-intent)
+ *   7. FinalCta      — bottom call-to-action
  *
  * v0.2 refactor: trimmed from 8 sections to 5. Removed AboutGame (info
  * duplicated Hero stats), FAQ (moved to /faq), standalone TrendingNow
@@ -22,8 +24,9 @@ import LocaleLayout from '~/components/layout/LocaleLayout.astro';
 import VideoSection from '~/components/home/VideoSection.astro';
 import QuickStart from '~/components/home/QuickStart.astro';
 import ExploreModules from '~/components/home/ExploreModules.astro';
+import EditorialStandards from '~/components/home/EditorialStandards.astro';
+import FaqSection from '~/components/home/FaqSection.astro';
 import { site } from '~/config/site';
-import { NAVIGATION_CONFIG } from '~/config/navigation';
 import { type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { getRecentEntries, parseEntryId } from '~/lib/content';
@@ -49,6 +52,16 @@ const start = home.start ?? { cards: [] };
 const popular = home.popular ?? { title: 'Trending Now', quickLinks: [] };
 const explore = home.explore ?? { modules: [] };
 const finalCta = home.finalCta ?? {};
+const editorial = home.editorial ?? {};
+const faq = home.faq ?? { items: [] };
+
+// "Reviewed <date>" formatter — trust signal shown on recent-update cards.
+// Cast: 'ja' branch is unreachable until ja joins `locales` in routing.ts.
+const dateFmt = new Intl.DateTimeFormat((locale as string) === 'ja' ? 'ja-JP' : 'en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
 
 // QuickLink may be a string or { label, href } — normalize for the sidebar list.
 type QuickLink = string | { label: string; href: string };
@@ -108,12 +121,27 @@ function trendingLabel(link: QuickLink): string {
         }
         {
           hero.secondaryCta && (
-            <a href={listPath(NAVIGATION_CONFIG[1]?.key ?? 'guides', locale)} class="btn-outline">
+            <a href={listPath('guides', locale)} class="btn-outline">
               {hero.secondaryCta}
             </a>
           )
         }
       </div>
+      {
+        hero.stats?.length > 0 && (
+          <dl class="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+            {hero.stats.map((stat: { value: string; label: string }) => (
+              <div class="flex items-baseline gap-2">
+                <dt class="sr-only">{stat.label}</dt>
+                <dd class="flex items-baseline gap-1.5">
+                  <span class="text-xl font-extrabold text-foreground">{stat.value}</span>
+                  <span class="text-sm text-muted-foreground">{stat.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
     </div>
   </section>
 
@@ -155,6 +183,10 @@ function trendingLabel(link: QuickLink): string {
                     <h3 class="mt-1 font-semibold leading-snug">{entry.data.title}</h3>
                     <p class="mt-1 line-clamp-2 text-sm text-muted-foreground">
                       {entry.data.description}
+                    </p>
+                    <p class="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
+                      <Icon name="lucide:calendar" class="h-3 w-3" />
+                      {dateFmt.format(entry.data.lastModified ?? entry.data.date)}
                     </p>
                   </a>
                 );
@@ -198,6 +230,9 @@ function trendingLabel(link: QuickLink): string {
     </div>
   </section>
 
+  {/* ───────────────────── Editorial standards (trust) ────────────────── */}
+  <EditorialStandards eyebrow={editorial.eyebrow} title={editorial.title} points={editorial.points} />
+
   {/* ──────────────────────────── Explore Modules ─────────────────────── */}
   {
     explore.modules?.length > 0 && (
@@ -210,6 +245,11 @@ function trendingLabel(link: QuickLink): string {
       </section>
     )
   }
+
+  {/* ─────────────────────────── FAQ (search-intent) ──────────────────── */}
+  {faq.items?.length > 0 && (
+    <FaqSection title={faq.title} items={faq.items} headingLevel="h2" locale={locale} />
+  )}
 
   {/* ─────────────────────────────── Final CTA ────────────────────────── */}
   {

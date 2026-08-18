@@ -30,11 +30,13 @@ export interface NavigationItem {
 
 export const NAVIGATION_CONFIG: NavigationItem[] = [
   { key: 'weapons', path: '/weapons', icon: 'lucide:sword', isContentType: true, order: 1 },
-  { key: 'builds', path: '/builds', icon: 'lucide:hammer', isContentType: true, order: 2 },
-  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true, order: 3 },
-  { key: 'characters', path: '/characters', icon: 'lucide:users', isContentType: true, order: 4 },
-  { key: 'secrets', path: '/secrets', icon: 'lucide:map-pin', isContentType: true, order: 5 },
-  { key: 'co-op', path: '/co-op', icon: 'lucide:users-round', isContentType: true, order: 6 },
+  { key: 'artifacts', path: '/artifacts', icon: 'lucide:gem', isContentType: true, order: 2 },
+  { key: 'tablets', path: '/tablets', icon: 'lucide:grid-2x2', isContentType: true, order: 3 },
+  { key: 'builds', path: '/builds', icon: 'lucide:hammer', isContentType: true, order: 4 },
+  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true, order: 5 },
+  { key: 'characters', path: '/characters', icon: 'lucide:users', isContentType: true, order: 6 },
+  { key: 'secrets', path: '/secrets', icon: 'lucide:map-pin', isContentType: true, order: 7 },
+  { key: 'co-op', path: '/co-op', icon: 'lucide:users-round', isContentType: true, order: 8 },
 ];
 
 /** Derived list of content type slugs (e.g. ['bosses', 'guides', 'items', 'codes']). */

@@ -2,27 +2,40 @@
 /**
  * FaqSection — renders the FAQ accordion from locale JSON `home.faq`.
  *
- * Reused on the dedicated /faq page (and could be dropped back onto the
- * homepage in the future if desired). Pure CSS <details> accordion with a
- * tiny inline script to sync aria-expanded.
+ * Used on the dedicated /faq page (heading as h1) and as a compact homepage
+ * section (heading as h2) for search-intent interception with internal links.
+ * Pure CSS <details> accordion with a tiny inline script to sync aria-expanded.
  */
 import { Icon } from 'astro-icon/components';
+import { defaultLocale, type Locale } from '~/i18n/routing';
+import { localizePath } from '~/lib/url';
 
 interface FaqItem {
   question: string;
   answer: string;
+  /** Optional internal link shown under the answer — funnels search intent to depth pages. */
+  link?: { label: string; href: string };
 }
 
 interface Props {
   title: string;
   description?: string;
   items: FaqItem[];
+  /** Heading level: h1 on the standalone /faq page, h2 when embedded on the homepage. */
+  headingLevel?: 'h1' | 'h2';
+  /** Locale for localizing item links. */
+  locale?: Locale;
 }
-const { title, description, items = [] } = Astro.props;
+const { title, description, items = [], headingLevel = 'h1', locale = defaultLocale } = Astro.props;
+const Heading = headingLevel;
+const headingClass =
+  headingLevel === 'h1'
+    ? 'text-3xl font-extrabold tracking-tight md:text-4xl'
+    : 'text-2xl font-bold';
 ---
 
-<section class="section">
-  <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">{title}</h1>
+<section class="section border-t border-border">
+  <Heading class={headingClass}>{title}</Heading>
   {description && <p class="mt-2 text-muted-foreground">{description}</p>}
   <div class="mt-8 space-y-2" data-faq-group>
     {
@@ -35,7 +48,18 @@ const { title, description, items = [] } = Astro.props;
             {item.question}
             <Icon name="lucide:chevron-down" class="h-4 w-4 transition group-open:rotate-180" />
           </summary>
-          <div class="px-4 pb-4 text-sm text-muted-foreground">{item.answer}</div>
+          <div class="px-4 pb-4 text-sm text-muted-foreground">
+            {item.answer}
+            {item.link && (
+              <a
+                href={localizePath(item.link.href, locale)}
+                class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-nav hover:underline"
+              >
+                {item.link.label}
+                <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
+              </a>
+            )}
+          </div>
         </details>
       ))
     }

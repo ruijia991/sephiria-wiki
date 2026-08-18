@@ -62,6 +62,10 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | unde
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl).href} />
 
     {/* hreflang alternates */}
@@ -84,13 +88,16 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | unde
     <meta property="og:locale" content={locale} />
 
     {/* Twitter */}
-    <meta name="twitter:card" content={article ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    {/* Theme color (browser chrome) */}
-    <meta name="theme-color" content="hsl(var(--nav-theme))" />
+    {/* Theme color (browser chrome) — meta tags can't resolve CSS vars, so these
+        are the hex equivalents of --nav-theme in globals.css. Update on re-skin:
+        light hsl(30 70% 51%), dark hsl(30 65% 47%). */}
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#d9822b" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#c6782a" />
 
     {/* Google Search Console verification (optional) */}
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
