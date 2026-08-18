@@ -33,3 +33,13 @@ export function isDefaultLocale(locale: string): boolean {
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
+
+/**
+ * Normalize a pathname to its clean route form. With build.format 'file',
+ * Astro.url.pathname carries the emitted filename ('/about.html',
+ * '/index.html'); strip it so canonical/hreflang/og:url and nav active
+ * matching always see '/about' and '/'.
+ */
+export function cleanRoutePath(pathname: string): string {
+  return pathname.replace(/(index)?\.html$/, '');
+}

@@ -12,6 +12,7 @@
  */
 import '~/styles/globals.css';
 import { site, siteUrl } from '~/config/site';
+import { cleanRoutePath } from '~/i18n/routing';
 import { organizationJsonLd } from '~/lib/seo';
 import JsonLd from '~/components/seo/JsonLd.astro';
 
@@ -41,6 +42,7 @@ const {
 
 const fullTitle = title.includes(site.name) ? title : `${title} — ${site.name}`;
 const orgJsonLd = organizationJsonLd();
+const canonicalPath = cleanRoutePath(Astro.url.pathname);
 
 // Optional analytics / verification (env-var gated — empty = not injected).
 const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
@@ -66,14 +68,14 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | unde
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl).href} />
+    <link rel="canonical" href={new URL(canonicalPath, siteUrl).href} />
 
     {/* hreflang alternates */}
     {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
     <link
       rel="alternate"
       hreflang="x-default"
-      href={`${siteUrl}${Astro.url.pathname.replace(/^\/(en|ja)/, '')}`}
+      href={`${siteUrl}${canonicalPath.replace(/^\/(en|ja)/, '')}`}
     />
 
     {/* Open Graph */}
@@ -83,7 +85,7 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | unde
     <meta property="og:image" content={image} />
     <meta property="og:image:width" content={String(site.ogImageWidth)} />
     <meta property="og:image:height" content={String(site.ogImageHeight)} />
-    <meta property="og:url" content={new URL(Astro.url.pathname, siteUrl).href} />
+    <meta property="og:url" content={new URL(canonicalPath, siteUrl).href} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content={locale} />
 

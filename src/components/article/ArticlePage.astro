@@ -20,7 +20,7 @@ import Comments from '~/components/article/Comments.astro';
 import WikiSidebar from '~/components/sidebar/WikiSidebar.astro';
 import { NAVIGATION_CONFIG } from '~/config/navigation';
 import { siteUrl } from '~/config/site';
-import { type Locale } from '~/i18n/routing';
+import { cleanRoutePath, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { getRelatedEntries, parseEntryId, type WikiEntry, type ResolvedEntry } from '~/lib/content';
 import { articleJsonLd, breadcrumbJsonLd, pageTitle } from '~/lib/seo';
@@ -173,6 +173,6 @@ const jsonLd = [
       )
     }
   </article>
-    <WikiSidebar locale={locale} currentPath={Astro.url.pathname} />
+    <WikiSidebar locale={locale} currentPath={cleanRoutePath(Astro.url.pathname)} />
   </div>
 </LocaleLayout>
